@@ -1,12 +1,12 @@
 <template>
   <div class="f-btn-container">
-    <slot/>
+    <slot />
   </div>
 </template>
 
 <script>
 /**
- *`FIAT` A container for multiple button
+ *`Wadiwaw` A container for multiple button
  * @requires FBtn
  */
 export default {}

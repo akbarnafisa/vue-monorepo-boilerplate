@@ -82,7 +82,6 @@
 </template>
 
 <script>
-import commonModule from '@wadiwaw/common'
 
 export default {
   name: 'HelloWorld',
@@ -94,8 +93,8 @@ export default {
   },
   data () {
     return {
-      commonModuleInfo: commonModule.getInfo(),
-      commonModuleName: commonModule.getInfo().name
+      commonModuleInfo: '',
+      commonModuleName: ''
     }
   },
 }

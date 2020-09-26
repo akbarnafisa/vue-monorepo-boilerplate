@@ -12,12 +12,12 @@
 
 <script>
 /**
- * `FIAT` The button can be divided into different kinds of types, states, and sizes. Each of them represented in a form of Vue props.
+ * `Wadiwaw` The button can be divided into different kinds of types, states, and sizes. Each of them represented in a form of Vue props.
  */
 export default {
   props: {
     /**
-     *`FIAT` Change button type
+     *`Wadiwaw` Change button type
      * @values primary, secondary, error, ghost, ghost-error, pills
      */
     type: {
@@ -33,7 +33,7 @@ export default {
       ].includes(val),
     },
     /**
-     *`FIAT` Change button size
+     *`Wadiwaw` Change button size
      * @values large, square, small, smallFixed, squareSmall, tiny
      */
     size: {
@@ -49,7 +49,7 @@ export default {
       ].includes(val),
     },
     /**
-     *`FIAT` HTML native type for button
+     *`Wadiwaw` HTML native type for button
      * @values button, submit, reset
      */
     htmlType: {
@@ -62,28 +62,28 @@ export default {
       ].includes(val),
     },
     /**
-     *`FIAT` Change button as an icon
+     *`Wadiwaw` Change button as an icon
      */
     icon: {
       type: Boolean,
       default: false,
     },
     /**
-     *`FIAT` Change button state to disabled
+     *`Wadiwaw` Change button state to disabled
      */
     disabled: {
       type: Boolean,
       default: false,
     },
     /**
-     *`FIAT` Make the text in button to be algin left
+     *`Wadiwaw` Make the text in button to be algin left
      */
     leftAlign: {
       type: Boolean,
       default: false,
     },
     /**
-     *`FIAT` Change button text to uppercase
+     *`Wadiwaw` Change button text to uppercase
      */
     uppercase: {
       type: Boolean,

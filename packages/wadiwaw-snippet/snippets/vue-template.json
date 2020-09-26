@@ -1,0 +1,360 @@
+{
+	"FAutocomplete default": {
+		"prefix": "fautoc",
+		"body": [
+			"<f-autocomplete",
+			"  v-model=\"${1:data}\"",
+			"  :options=\"${2:options}\"",
+			"  label=\"${3:Label}\"",
+			"/>",
+			""
+		],
+		"description": "FAutocomplete default"
+	},
+	"FAutocomplete with custom slot": {
+		"prefix": "fautoc-slot",
+		"body": [
+			"<f-autocomplete",
+			"  v-model=\"${1:data}\"",
+			"  :options=\"${2:options}\"",
+			"  label=\"${3:Label}\"",
+			">",
+			"  <template",
+			"    slot=\"item\"",
+			"    slot-scope=\"option\"",
+			"  >",
+			"    <div",
+			"      class=\"f-body body-16 py-8 px-16\"",
+			"      v-html=\"option.title\"",
+			"    ></div>",
+			"  </template>",
+			"</f-autocomplete>",
+			""
+		],
+		"description": "FAutocomplete with custom slot"
+	},
+	"FBtn default": {
+		"prefix": "fbtn",
+		"body": [
+			"<f-btn type=\"${1:primary}\" size=\"${2:large}\">",
+			" ${3:Text}",
+			"</f-btn>",
+			""
+		],
+		"description": "FBtn default"
+	},
+	"FBtn with icon": {
+		"prefix": "fbtn-icon",
+		"body": [
+			"<f-btn type=\"${1:primary}\" size=\"${2:large}\" icon>",
+			"  ${3:Text}",
+			"  <icon name=\"${4:icon}\"/>",
+			"</f-btn>",
+			""
+		],
+		"description": "FBtn with icon"
+	},
+	"FBtn with left align": {
+		"prefix": "fbtn-left-align",
+		"body": [
+			"<f-btn type=\"${1:primary}\" size=\"${2:large}\" leftAlign>",
+			"  <div>${3:Text}</div>",
+			"  <div>${4:Text}</div>",
+			"</f-btn>",
+			""
+		],
+		"description": "fbtn-left-align"
+	},
+	"FBtn with button wrapper": {
+		"prefix": "fbtn-wrapper",
+		"body": [
+			"<f-btn-wrapper>",
+			"  <f-btn class=\"mr-8\" type=\"primary\" size=\"large\">",
+			"    ${1:Text}",
+			"  </f-btn>",
+			"  <f-btn type=\"primary\" size=\"large\">",
+			"    ${2:Text}",
+			"  </f-btn>",
+			"</f-btn-wrapper>",
+			""
+		],
+		"description": "FBtn with button wrapper"
+	},
+	"FCard default": {
+		"prefix": "fcard",
+		"body": [
+			"<f-card>",
+			"  <f-card-content>",
+			"    ${1:Text}",
+			"  </f-card-content>",
+			"  <f-card-actions>",
+			"    <f-btn type=\"secondary\">",
+			"      ${2:Text}",
+			"    </f-btn>",
+			"    <f-btn type=\"primary\">",
+			"       ${3:Text}",
+			"    </f-btn>",
+			"  </f-card-actions>",
+			"</f-card>",
+			"",
+		],
+		"description": "FCard default"
+	},
+	"FCard with button stacked": {
+		"prefix": "fcard-btn-stacked",
+		"body": [
+			"<f-card>",
+			"  <f-card-content>",
+			"    ${1:Text}",
+			"  </f-card-content>",
+			"  <f-card-actions stacked>",
+			"    <f-btn type=\"secondary\">",
+			"      ${2:Text}",
+			"    </f-btn>",
+			"    <f-btn type=\"primary\">",
+			"      ${3:Text}",
+			"    </f-btn>",
+			"  </f-card-actions>",
+			"</f-card>",
+			""
+		],
+		"description": "FCard with button stacked"
+	},
+	"FCell default": {
+		"prefix": "fcell",
+		"body": [
+			"<f-cell class=\"pl-16 pr-4 py-12\">",
+			"  <f-cell-icon class=\"mr-12\">",
+			"    <icon name=\"${1:icon}\"/>",
+			"  </f-cell-icon>",
+			"  <f-cell-content>",
+			"    <f-cell-label>",
+			"      ${2:Label}",
+			"    </f-cell-label>",
+			"    <f-cell-desc>",
+			"      ${3:Description}",
+			"    </f-cell-desc>",
+			"  </f-cell-content>",
+			"</f-cell>",
+			"<f-divider />",
+			""
+		],
+		"description": "FCell default"
+	},
+	"FCell with arrow icon": {
+		"prefix": "fcell-icon-arrow",
+		"body": [
+			"<f-cell class=\"pl-16 pr-4 py-12\">",
+			"  <f-cell-icon class=\"mr-12\">",
+			"    <icon name=\"${1:icon}\"/>",
+			"  </f-cell-icon>",
+			"  <f-cell-content>",
+			"    <f-cell-label>",
+			"      ${2:Label}",
+			"    </f-cell-label>",
+			"    <f-cell-desc>",
+			"      ${3:Description}",
+			"    </f-cell-desc>",
+			"  </f-cell-content>",
+			"  <f-cell-action class=\"f-flex flex-center\">",
+			"    <div class=\"arrow\" />",
+			"  </f-cell-action>",
+			"</f-cell>",
+			"<f-divider />",
+			""
+		],
+		"description": "FCell with arrow icon"
+	},
+	"FCheckbox default": {
+		"prefix": "fcheckbox",
+		"body": [
+			"<f-checkbox label=\"${1:Label}\" v-model=\"${2:data}\"></f-checkbox>",
+			""
+		],
+		"description": "FCheckbox default"
+	},
+	"FDialog default": {
+		"prefix": "fdialog",
+		"body": [
+			"<f-dialog type=\"modal\" v-model=\"${1:triggerModal}\">",
+			"  <f-card class=\"p-12 pt-16\">",
+			"    <f-card-content class=\"f-text-center\">",
+			"      <f-card-img>",
+			"        <icon name=\"${2:icon}\"/>",
+			"      </f-card-img>",
+			"      <div class=\"f-title title-16 my-8\">",
+			"        ${3:Title}",
+			"      </div>",
+			"      <div class=\"f-caption caption-12\">",
+			"        ${4:Desc}",
+			"      </div>",
+			"    </f-card-content>",
+			"    <f-card-actions class=\"mt-16\" >",
+			"      <f-btn type=\"ghost\" size=\"small\">",
+			"        ${5:BUTTON}",
+			"      </f-btn>",
+			"      <f-btn type=\"primary\" size=\"small\">",
+			"        ${6:BUTTON}",
+			"      </f-btn>",
+			"    </f-card-actions>",
+			"  </f-card>",
+			"</f-dialog>",
+			""
+		],
+		"description": "FDialog default"
+	},
+	"FDialog with button stacked": {
+		"prefix": "fdialog-btn-stacked",
+		"body": [
+			"<f-dialog type=\"modal\" v-model=\"${1:triggerModal}\">",
+			"  <f-card class=\"p-12 pt-16\">",
+			"    <f-card-content class=\"f-text-center\">",
+			"      <f-card-img>",
+			"        <icon name=\"${2:icon}\"/>",
+			"      </f-card-img>",
+			"      <div class=\"f-title title-16 my-8\">",
+			"        ${3:Title}",
+			"      </div>",
+			"      <div class=\"f-caption caption-12\">",
+			"        ${4:Desc}",
+			"      </div>",
+			"    </f-card-content>",
+			"    <f-card-actions class=\"mt-16\" stacked>",
+			"      <f-btn type=\"ghost\" size=\"small\">",
+			"        ${5:BUTTON}",
+			"      </f-btn>",
+			"      <f-btn type=\"primary\" size=\"small\">",
+			"        ${6:BUTTON}",
+			"      </f-btn>",
+			"    </f-card-actions>",
+			"  </f-card>",
+			"</f-dialog>",
+			""
+		],
+		"description": "FDialog with button stacked"
+	},
+	"FDivider default": {
+		"prefix": "fdivider",
+		"body": [
+			"<f-divider type=\"${1:line-full}\" />",
+			""
+		],
+		"description": "FDivider default"
+	},
+	"FDivider with title": {
+		"prefix": "fdivider-title",
+		"body": [
+			"<f-divider class=\"py-4 px-16\" title=\"${1:TITLE}\" type=\"${2:title}\" />",
+			""
+		],
+		"description": "FDivider with title"
+	},
+	"FInput default": {
+		"prefix": "finput",
+		"body": [
+			"<f-input label=\"${1:Label}\" v-model=\"data\"/>",
+			""
+		],
+		"description": "FInput default"
+	},
+	"FInput with text-box input type": {
+		"prefix": "finput-text-box",
+		"body": [
+			"<f-input",
+			"  label=\"${1:Label}\"",
+			"  input-type=\"${2:text-box}\"",
+			"  v-model=\"${3:data}\"",
+			"/>",
+			""
+		],
+		"description": "FInput with text box input type"
+	},
+	"FInput with text-amount input type": {
+		"prefix": "finput-text-amount",
+		"body": [
+			"<f-input",
+			"  label=\"${1:Label}\"",
+			"  input-type=\"${2:text-field-amount}\"",
+			"  placeholder=\"${3:Amount}\"",
+			"  v-model=\"${4:data}\"",
+			"/>",
+			""
+		],
+		"description": "FInput with text-amount input type"
+	},
+	"FNotif default": {
+		"prefix": "fnotif",
+		"body": [
+			"<f-notif type=\"dot\"/>",
+			""
+		],
+		"description": "FNotif default"
+	},
+	"FNotif with number type": {
+		"prefix": "fnotif-number",
+		"body": [
+			"<f-notif type=\"number\" amount=\"${1:10}\"/>",
+			""
+		],
+		"description": "FNotif with number type"
+	},
+	"FOverlay default": {
+		"prefix": "foverlay",
+		"body": [
+			"<f-overlay type=\"${1:shade}\" />",
+			""
+		],
+		"description": "FOverlay default"
+	},
+	"FRadio default": {
+		"prefix": "fradio",
+		"body": [
+			"<f-radio label=\"${1:Label}\" v-model=\"${2:data}\" />",
+			""
+		],
+		"description": "FRadio default"
+	},
+	"FSheetSwipe default": {
+		"prefix": "fsheetswipe",
+		"body": [
+			"<f-sheet-swipe v-model=\"${1:triggerSheet}\">",
+			"  <f-card rounded-top>",
+			"    <div class=\"dash\" />",
+			"    <f-card-content class=\"p-16\">",
+			"      ${2:Text}",
+			"    </f-card-content>",
+			"    <f-card-actions class=\"px-16 pb-24\">",
+			"      <f-btn type=\"secondary\">",
+			"        ${3:BUTTON}",
+			"      </f-btn>",
+			"      <f-btn type=\"primary\">",
+			"        ${4:BUTTON}",
+			"      </f-btn>",
+			"    </f-card-actions>",
+			"  </f-card>",
+			"</f-sheet-swipe>",
+			""
+		],
+		"description": "FSheetSwipe default"
+	},
+	"FSwitch default": {
+		"prefix": "fswitch",
+		"body": [
+			"<f-switch v-model=\"${1:data}\" />",
+			""
+		],
+		"description": "FSwitch default"
+	},
+	"FTextarea default": {
+		"prefix": "ftextarea",
+		"body": [
+			"<f-textarea",
+			"  v-model=\"${1:data}\"",
+			"  label=\"${2:Label}\"",
+			"  placeholder=\"${3:Placeholder}\"",
+			"/>",
+			""
+		],
+		"description": "FTextarea default"
+	}
+}

@@ -2,8 +2,7 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*",
-      "website"
+      "packages/*"
     ],
     "nohoist": [
       "core-js"
@@ -17,9 +16,11 @@
   "license": "MIT",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "dev:ui": "yarn workspace @wadiwaw/ui serve",
+    "dev:ui": "yarn workspace @wadiwaw/wadiwaw-core serve",
     "dev:docs": "yarn workspace @wadiwaw/wadiwaw-docs dev",
-    "build": "lerna run build",
+    "build": "lerna build",
+    "build:ui": "yarn workspace @wadiwaw/wadiwaw-core build",
+    "build:snippet": "yarn workspace @wadiwaw/wadiwaw-docs build",
     "publish": "lerna publish"
   },
   "devDependencies": {
