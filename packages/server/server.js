@@ -7,7 +7,7 @@ console.log('STARTUP')
 const express = require('express')
 const expressBodyParser = require('body-parser')
 const packageInfo = require('./package.json')
-const monoRepoTestCommon = require('@vue-monorepo-boilerplate/common')
+const monoRepoTestCommon = require('@wadiwaw/common')
 
 console.log('Common package Info:' + JSON.stringify(monoRepoTestCommon.getInfo()))
 
@@ -15,7 +15,7 @@ var app = module.exports = express()
 app.set('svcInfo', packageInfo)
 app.set('port', process.env.PORT || 3200)
 
-const uiPath = path.join(path.dirname(require.resolve('@vue-monorepo-boilerplate/ui/package.json')), 'dist')
+const uiPath = path.join(path.dirname(require.resolve('@wadiwaw/ui/package.json')), 'dist')
 console.log('Resolved path to UI dist:' + uiPath)
 app.use(express.static(uiPath))
 

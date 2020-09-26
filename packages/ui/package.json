@@ -1,5 +1,5 @@
 {
-  "name": "@vue-monorepo-boilerplate/ui",
+  "name": "@wadiwaw/ui",
   "version": "0.1.9",
   "private": true,
   "scripts": {
@@ -18,7 +18,7 @@
     "vuex": "^3.1.1"
   },
   "devDependencies": {
-    "@vue-monorepo-boilerplate/common": "^0.1.9",
+    "@wadiwaw/common": "^0.1.9",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-e2e-cypress": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
