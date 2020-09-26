@@ -1,0 +1,272 @@
+// import Mixins
+@import "../../../styles/core/variables.less";
+@import "../../../styles/core/mixins.less";
+
+// Method
+@btn: {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  border: 0;
+  border-radius: .04rem;
+  outline: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+@btn-large-half-common: {
+  height: .44rem;
+  padding-right: .12rem;
+  padding-left: .12rem;
+  font-size: 0.16rem;
+  font-weight: 600;
+  font-family: OpenSans, sans-serif;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+}
+
+@btn-large: {
+  width: 100%;
+}
+
+@btn-small-common: {
+  font-weight: 600;
+  font-size: 0.12rem;
+  font-family: OpenSans, sans-serif;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  padding: 0 .12rem;
+  height: .32rem;
+}
+
+@btn-small-fixed: {
+  width: .96rem;
+}
+
+@btn-tiny: {
+  padding: .04rem .06rem;
+  font-weight: 600;
+  font-size: .1rem;
+  font-family: @OpenSans;
+  line-height: 1.4;
+  text-align: center;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+
+@btn-icon-large: {
+  min-width: .44rem;
+  height: .44rem;
+  font-size: 0.1rem;
+
+  div {
+    img, div, span, i {
+      width: .28rem;
+      height: .28rem;
+      vertical-align: middle;
+    }
+  }
+}
+
+@btn-icon-small: {
+  min-width: .32rem;
+  height: .32rem;
+  font-size: 0.1rem;
+
+  div {
+    img, div, i, span {
+      width: .24rem;
+      height: .24rem;
+      vertical-align: middle;
+    }
+  }
+}
+
+@activeIcon: {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img, i, span {
+    min-width: .24rem;
+    min-height: .24rem;
+  }
+}
+
+@activeIconRight: {
+  img, i, span {
+    position: absolute;
+    right: .12rem;
+  }
+}
+
+@leftAlignIcon: {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img, i, span {
+    min-width: .24rem;
+    min-height: .24rem;
+  }
+}
+
+// Primary
+@btn-primary: {
+  color: @white;
+  background-color: @blue-50;
+
+  &:disabled {
+    @btn-primary-disable();
+  }
+}
+
+@btn-primary-disable: {
+  color: @white;
+  background-color: @grey-40;
+}
+
+// Secondary
+@btn-secondary-error-common: {
+  background-color: @white;
+  &:disabled {
+    @btn-secondary-disable();
+  }
+}
+@btn-secondary: {
+  color: @blue-50;
+  .borderInside(solid, .01rem, @blue-50, .04rem);
+}
+
+@btn-error: {
+  color: @red-50;
+  i {
+    color: red;
+  }
+  .borderInside(solid, .01rem, @red-50, .04rem);
+}
+
+@btn-secondary-disable: {
+  color: @grey-40;
+  .borderInside(solid, .01rem, @grey-20, .04rem);
+}
+
+// Ghost
+@btn-ghost: {
+  color: @blue-50;
+  background-color: transparent;
+
+  &:disabled {
+    @btn-secondary-disable();
+
+    &:after {
+      border: none;
+    }
+  }
+}
+
+@btn-ghost-error: {
+  color: @red-50;
+}
+
+@btn-ghost-disable: {
+  color: @grey-40;
+}
+
+.f-btn {
+  @btn();
+}
+
+.f-btn-large {
+  @btn-large-half-common();
+}
+.f-btn-large {
+  @btn-large();
+}
+.f-btn-small, .f-btn-smallFixed {
+  @btn-small-common();
+}
+
+.f-btn-uppercase {
+  text-transform: uppercase
+}
+
+.f-btn-small {
+  // @btn-small();
+}
+
+.f-btn-tiny {
+  @btn-tiny();
+}
+
+.f-btn-smallFixed {
+  // @btn-small();
+  @btn-small-fixed();
+}
+
+.f-btn-primary {
+  @btn-primary();
+}
+
+.f-btn-disable {
+  @btn-primary();
+  @btn-primary-disable();
+}
+.f-btn-icon {
+  @activeIcon();
+  @activeIconRight();
+}
+
+.f-btn-leftAlign {
+  @leftAlignIcon();
+}
+
+.f-btn-secondary, .f-btn-error {
+  @btn-secondary-error-common()
+}
+
+.f-btn-secondary {
+  @btn-secondary();
+}
+
+.f-btn-error {
+  @btn-error();
+}
+
+.f-btn-square {
+  @btn-icon-large();
+}
+
+.f-btn-squareSmall {
+  @btn-icon-small();
+}
+
+.f-btn-ghost {
+  @btn-ghost();
+}
+
+.f-btn-ghost-error {
+  @btn-ghost();
+  @btn-ghost-error();
+}
+
+.f-btn-uppercase {
+  text-transform: uppercase
+}
+
+.f-btn-pills {
+  padding: 0 .08rem;
+  @f-caption();
+  font-size: .12rem;
+  line-height: 1.34;
+  display: flex;
+  align-items: center;
+  border-radius: .16rem;
+  border: solid .01rem @grey-20;
+  background-color: #fff;
+}

@@ -1,0 +1,39 @@
+/* Color */
+@blue-50: #108ee9;
+@red-50: #ff5d55;
+
+
+@white: #ffffff;
+@grey-20: #e3e3e3;
+@grey-40: #bfbfbf;
+@grey-90: #313131;
+@black: #000000;
+
+/* Typography */
+@OpenSans: OpenSans, sans-serif;
+@font-family-base:    -apple-system, system-ui, BlinkMacSystemFont, Roboto, sans-serif;
+
+@fw-normal: {
+  font-weight: normal;
+}
+
+@normal-body: {
+  color: @grey-90;
+}
+
+@f-title: {
+  font-family: @OpenSans;
+  @fw-600();
+}
+
+@f-body: {
+  font-family: @font-family-base;
+  @normal-body();
+  @fw-normal();
+}
+
+@f-caption: {
+  font-family: @font-family-base;
+  @normal-body();
+  @fw-normal();
+}

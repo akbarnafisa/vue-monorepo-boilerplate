@@ -8,7 +8,6 @@
     <h4>{{commonModuleName}}</h4>
 
     <h3>Server Info</h3>
-    <h5>{{serverInfo}}</h5>
 
     <p>
       For guide and recipes on how to configure / customize this project,<br>
@@ -88,7 +87,10 @@ import commonModule from '@wadiwaw/common'
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: {
+      type: String,
+      default: '',
+    },
   },
   data () {
     return {
@@ -96,19 +98,11 @@ export default {
       commonModuleName: commonModule.getInfo().name
     }
   },
-  mounted: function () {
-    this.$store.dispatch('loadServerInfo')
-  },
-  computed: {
-    serverInfo () {
-      return this.$store.state.serverInfo
-    }
-  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style scoped lang="less">
 h3 {
   margin: 40px 0 0;
 }

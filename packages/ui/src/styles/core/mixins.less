@@ -1,0 +1,14 @@
+// Border Inside
+.borderInside(@style: solid, @width, @color, @radius: 0) {
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: @style @width @color;
+    border-radius: @radius;
+    content: '';
+  }
+}
