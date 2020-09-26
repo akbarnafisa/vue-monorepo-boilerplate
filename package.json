@@ -1,23 +1,19 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "core-js"
+    ]
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/slanatech/vue-monorepo-boilerplate"
+    "url": "https://github.com/akbarnafisa/vue-monorepo-boilerplate"
   },
-  "author": "https://github.com/sv2",
-  "homepage": "https://slanatech.github.io/vue-monorepo-boilerplate/",
-  "bugs": {
-    "url": "https://github.com/slanatech/vue-monorepo-boilerplate/issues",
-    "email": "sv2@slana.tech"
-  },
+  "author": "Akbar Nafisa",
   "license": "MIT",
-  "config": {
-    "imageRepo": "slanatech/vue-monorepo-boilerplate",
-    "imageName": "vue-monorepo-boilerplate"
-  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "dev": "concurrently --kill-others --success first \"npm start --prefix ./packages/server\" \"npm run serve --prefix ./packages/ui\"",
@@ -26,11 +22,6 @@
     "test:server": "npm test --prefix ./packages/server",
     "test:ui": "npm test --prefix ./packages/ui",
     "build": "lerna run build",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:deploy": "yarn run docs:build && ./scripts/docsdeploy.sh",
-    "getv": "echo $IMAGE_VERSION",
-    "docker:build": "IMAGE_VERSION=$(node -p \"require('./lerna.json').version\") && docker image build -t $npm_package_config_imageRepo:$IMAGE_VERSION -f ./docker/Dockerfile .",
     "publish": "lerna publish"
   },
   "devDependencies": {
