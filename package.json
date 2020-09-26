@@ -2,7 +2,11 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "website"
+    ],
+    "nohoist": [
+      "core-js"
     ]
   },
   "repository": {
@@ -13,11 +17,8 @@
   "license": "MIT",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "dev": "yarn workspace @wadiwaw/ui serve",
-    "test": "npm run test:common && npm run test:server && npm run test:ui",
-    "test:common": "npm test --prefix ./packages/common",
-    "test:server": "npm test --prefix ./packages/server",
-    "test:ui": "npm test --prefix ./packages/ui",
+    "dev:ui": "yarn workspace @wadiwaw/ui serve",
+    "dev:docs": "yarn workspace @wadiwaw/wadiwaw-docs dev",
     "build": "lerna run build",
     "publish": "lerna publish"
   },
@@ -91,11 +92,11 @@
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-declaration-block-no-ignored-properties": "^2.1.0",
     "stylelint-order": "^3.1.1",
-    "vue": "^2.6.10",
+    "vue": "^2.6.11",
     "vue-docgen-api": "^4.31.0",
     "vue-jest": "^3.0.5",
     "vue-router": "^3.1.5",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.11"
   },
   "engines": {
     "node": ">= 8"
