@@ -2,6 +2,13 @@
   <div class="container">
     <div>
       <Logo />
+      <f-btn
+        type="primary"
+        size="large"
+      >
+        Text
+      </f-btn>
+
       <h1 class="title">website</h1>
       <div class="links">
         <a
@@ -26,7 +33,12 @@
 </template>
 
 <script>
-export default {}
+import { FBtn } from '@wadiwaw/wadiwaw-core'
+export default {
+  components: {
+    FBtn,
+  },
+}
 </script>
 
 <style>

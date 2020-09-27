@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve --port 8181",
     "build": "rm -rf dist &&  rollup -c"
   },
-  "main": "dist/cjs/index.js",
+  "main": "dist/esm/index-es.js",
   "module": "dist/esm/index-es.js",
   "files": [
     "src/assets",

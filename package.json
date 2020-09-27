@@ -8,10 +8,7 @@
       "core-js"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/akbarnafisa/wadiwaw"
-  },
+  "repository": "https://github.com/akbarnafisa/wadiwaw",
   "author": "Akbar Nafisa",
   "license": "MIT",
   "scripts": {
@@ -24,11 +21,11 @@
     "publish": "lerna publish"
   },
   "devDependencies": {
-    "lerna": "^2.11.0",
     "@babel/core": "^7.11.4",
     "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@babel/runtime": "^7.11.2",
+    "@babel/runtime-corejs2": "^7.8.7",
     "@cypress/code-coverage": "^3.8.1",
     "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-babel": "^5.2.0",
@@ -37,6 +34,7 @@
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-url": "^5.0.1",
     "@types/jest": "^26.0.4",
+    "@vue/babel-preset-app": "^4.1.1",
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-e2e-cypress": "^4.4.6",
     "@vue/cli-plugin-eslint": "^3.11.0",
@@ -49,7 +47,7 @@
     "babel-jest": "^26.1.0",
     "chalk": "^4.1.0",
     "clean-css": "^4.2.3",
-    "core-js": "^2.6.5",
+    "core-js": "^3.6.4",
     "deepmerge": "^4.2.2",
     "eslint": "^5.16.0",
     "eslint-config-antife": "^2.0.0",
@@ -64,11 +62,12 @@
     "jest": "^26.1.0",
     "jest-serializer-vue": "^2.0.2",
     "jest-transform-stub": "^2.0.0",
+    "lerna": "^2.11.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "less-plugin-clean-css": "^1.5.1",
-    "param-case": "^3.0.3",
     "less-scss-convertor": "^0.0.17",
+    "param-case": "^3.0.3",
     "pixelmatch": "^5.2.1",
     "pngjs": "^5.0.0",
     "prettier": "^1.16.4",
@@ -76,6 +75,7 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.23.0",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-buble": "^0.19.8",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-css-only": "^2.1.0",
     "rollup-plugin-img": "^1.1.0",
@@ -83,7 +83,7 @@
     "rollup-plugin-less2": "^3.0.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^3.1.8",
-    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-vue": "5.0.0",
     "rollup-plugin-vue-global-styles": "^0.1.0",
     "rollup-plugin-vue-inline-svg": "^1.1.1",
@@ -93,13 +93,16 @@
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-declaration-block-no-ignored-properties": "^2.1.0",
     "stylelint-order": "^3.1.1",
-    "vue": "^2.6.11",
+    "vue": "^2.6.10",
     "vue-docgen-api": "^4.31.0",
     "vue-jest": "^3.0.5",
     "vue-router": "^3.1.5",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.10"
   },
   "engines": {
     "node": ">= 8"
-  }
+  },
+  "name": "vue-monorepo-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js"
 }

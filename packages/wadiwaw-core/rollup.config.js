@@ -2,12 +2,16 @@ import path from 'path'
 import globby from 'globby'
 import vue from 'rollup-plugin-vue'
 import cjs from '@rollup/plugin-commonjs'
-import babel from 'rollup-plugin-babel'
+import babel from '@rollup/plugin-babel'
 import image from '@rollup/plugin-image'
 import alias from '@rollup/plugin-alias'
 import resolve from '@rollup/plugin-node-resolve'
 import pkg from './package.json'
 import postcss from 'rollup-plugin-postcss'
+
+// import resolve from 'rollup-plugin-node-resolve'
+// import cjs from 'rollup-plugin-commonjs'
+
 
 const index = {
   'index-es': 'src/components-new/index-es.js',
@@ -26,7 +30,8 @@ const vuePluginConfig = {
 
 const babelConfig = {
   exclude: 'node_modules/**',
-  runtimeHelpers: true,
+  babelHelpers: 'runtime',
+  skipPreflightCheck: true,
   babelrc: false,
   presets: [['@babel/preset-env', { modules: false }]],
   extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.vue', '.svg'],
@@ -58,7 +63,7 @@ const plugins = [
   }),
   vue(vuePluginConfig),
   babel(babelConfig),
-  cjs()
+  cjs(),
 ]
 
 function generateComponentInput (pathList) {
@@ -94,24 +99,14 @@ export default globby([
       plugins,
       external
     },
-    // {
-    //   input: combineInput(componentInput, index),
-    //   output: {
-    //     dir: 'dist/cjs',
-    //     format: 'cjs',
-    //     exports: 'named'
-    //   },
-    //   plugins,
-    //   external
-    // },
-    // {
-    //   input: 'src/components-new/Toast/index',
-    //   output: {
-    //     file: 'dist/toast.js',
-    //     format: 'cjs',
-    //     exports: 'named'
-    //   },
-    //   plugins,
-    //   external
-    // }
+    {
+      input: combineInput(componentInput, index),
+      output: {
+        dir: 'dist/cjs',
+        format: 'cjs',
+        exports: 'named'
+      },
+      plugins,
+      external
+    },
   ]))
