@@ -25,7 +25,7 @@ const vuePluginConfig = {
 }
 
 const babelConfig = {
-  exclude: 'node_modules/**',
+  exclude: '../../node_modules/**',
   runtimeHelpers: true,
   babelrc: false,
   presets: [['@babel/preset-env', { modules: false }]],

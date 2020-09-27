@@ -32,5 +32,15 @@ export default {
   modules: [],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    transpile: [
+      '@wadiwaw/wadiwaw-core',
+    ],
+    additionalExtensions: [
+      '.mdx'
+    ],
+    extend (config, ctx) {
+      config.resolve.alias.vue = 'vue/dist/vue.common'
+    }
+  },
 }
