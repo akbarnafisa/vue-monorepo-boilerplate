@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/v0.6.1...v0.6.2) (2020-09-30)
+
+
+### Features
+
+* **snippet:** update 007 ([11dc15a](https://github.com/akbarnafisa/vue-monorepo-boilerplate/commit/11dc15ad20e729cb2a5409e7c9f4856c7c3afa31))
+
+
+
+
+
 ## [0.6.1](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/v0.6.0...v0.6.1) (2020-09-30)
 
 
