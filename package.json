@@ -23,7 +23,9 @@
     "install:snippet": "yarn workspace wadiwaw-vscode-snippets build",
     "publish:snippet": "yarn workspace @wadiwaw/wadiwaw-snippet publish",
     "publish:core": "yarn workspace @wadiwaw/wadiwaw-core publish",
-    "new-version": "lerna version --conventional-commits --yes"
+    "push": "git add -A && git commit -m \"chore(lerna): publishing package \" && lerna version --conventional-commits",
+    "release": "lerna version patch"
+
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
