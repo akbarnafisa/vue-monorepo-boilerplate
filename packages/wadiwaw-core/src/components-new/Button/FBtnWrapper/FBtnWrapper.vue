@@ -1,6 +1,6 @@
 <template>
   <div class="f-btn-container">
-    hello from 0.6
+    hello from 0.7
     <slot />
   </div>
 </template>
