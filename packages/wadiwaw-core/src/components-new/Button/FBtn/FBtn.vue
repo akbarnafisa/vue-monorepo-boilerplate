@@ -6,7 +6,7 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    hello from 0.2
+    hello from 0.3
     <slot />
   </button>
 </template>
