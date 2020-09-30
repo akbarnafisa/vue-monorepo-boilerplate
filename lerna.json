@@ -7,10 +7,13 @@
       "allowBranch": "master"
     },
     "publish": {
-      "allowBranch": "master"
+      "conventionalCommits": true,
+      "allowBranch": "master",
+      "message": "chore(release): publish"
     }
   },
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "0.6.2"
+  "version": "independent",
+  "registry": "https://registry.npmjs.org/"
 }

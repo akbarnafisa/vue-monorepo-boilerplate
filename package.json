@@ -15,16 +15,16 @@
     "clean": "lerna clean",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "postinstall": "lerna link",
-    "dev:ui": "yarn workspace @wadiwaw/wadiwaw-core serve",
+    "dev:core": "yarn workspace @wadiwaw/wadiwaw-core serve",
     "dev:docs": "yarn workspace @wadiwaw/wadiwaw-docs dev",
     "build": "lerna build",
-    "build:ui": "yarn workspace @wadiwaw/wadiwaw-core build",
+    "build:core": "yarn workspace @wadiwaw/wadiwaw-core build",
     "build:snippet": "yarn workspace wadiwaw-vscode-snippets build",
     "install:snippet": "yarn workspace wadiwaw-vscode-snippets build",
     "publish:snippet": "yarn workspace @wadiwaw/wadiwaw-snippet publish",
     "publish:core": "yarn workspace @wadiwaw/wadiwaw-core publish",
-    "push": "git add -A && git commit -m \"chore(lerna): publishing package \" && lerna version --conventional-commits patch",
-    "release": "lerna version patch --conventional-commits"
+    "new-version": "lerna version patch --conventional-commits --no-git-tag-version",
+    "release": "lerna version patch && lerna publish from-package"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
