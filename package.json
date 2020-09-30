@@ -19,8 +19,10 @@
     "dev:docs": "yarn workspace @wadiwaw/wadiwaw-docs dev",
     "build": "lerna build",
     "build:ui": "yarn workspace @wadiwaw/wadiwaw-core build",
-    "build:snippet": "yarn workspace @wadiwaw/wadiwaw-docs build",
-    "publish": "lerna publish"
+    "build:snippet": "yarn workspace wadiwaw-vscode-snippets build",
+    "install:snippet": "yarn workspace wadiwaw-vscode-snippets build",
+    "publish:snippet": "yarn workspace @wadiwaw/wadiwaw-snippet publish",
+    "publish:core": "yarn workspace @wadiwaw/wadiwaw-core publish"
   },
   "devDependencies": {
     "lerna": "^2.11.0",
