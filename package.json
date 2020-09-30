@@ -3,9 +3,6 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ],
-    "nohoist": [
-      "core-js"
     ]
   },
   "repository": {
@@ -15,7 +12,9 @@
   "author": "Akbar Nafisa",
   "license": "MIT",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "postinstall": "lerna link",
     "dev:ui": "yarn workspace @wadiwaw/wadiwaw-core serve",
     "dev:docs": "yarn workspace @wadiwaw/wadiwaw-docs dev",
     "build": "lerna build",

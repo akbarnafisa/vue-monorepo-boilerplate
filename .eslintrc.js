@@ -10,9 +10,6 @@ module.exports = {
   ],
   rules: {
     'vue/no-v-html': 0,
-    'vue/attribute-hyphenation': ['never', {
-      "ignore": []
-    }],
   },
 
   overrides: [
