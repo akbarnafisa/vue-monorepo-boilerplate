@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/v0.6.0...v0.6.1) (2020-09-30)
+
+
+### Features
+
+* **snippet:** update 006 ([06a1590](https://github.com/akbarnafisa/vue-monorepo-boilerplate/commit/06a15907e234eec2d062fefaf30464d5cb1d56dd))
+
+
+
+
+
 # [0.6.0](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/v0.5.3...v0.6.0) (2020-09-30)
 
 **Note:** Version bump only for package @wadiwaw/wadiwaw-snippet

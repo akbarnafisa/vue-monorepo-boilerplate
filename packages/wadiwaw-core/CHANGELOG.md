@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/v0.6.0...v0.6.1) (2020-09-30)
+
+
+### Features
+
+* **FBtn:** update 006 ([363fa74](https://github.com/akbarnafisa/vue-monorepo-boilerplate/commit/363fa74117f219c6d531b9a1b78043eb231eb65a))
+* **FBtn:** update 007 ([6db5c58](https://github.com/akbarnafisa/vue-monorepo-boilerplate/commit/6db5c580b769f0ca530377d7a517993837001156))
+* **FBtn:** update 008 ([a0cb123](https://github.com/akbarnafisa/vue-monorepo-boilerplate/commit/a0cb1230925ec473dd1ed44a82e6eb35ae2d5636))
+* **FBtnWrapper:** update 006 ([10778e8](https://github.com/akbarnafisa/vue-monorepo-boilerplate/commit/10778e80afeb9d5930a7fd69a18711718135d2bf))
+* **FBtnWrapper:** update 007 ([9b26a80](https://github.com/akbarnafisa/vue-monorepo-boilerplate/commit/9b26a8028b7da50c958e465b01e027e34a59a5b1))
+
+
+
+
+
 # [0.6.0](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/v0.5.3...v0.6.0) (2020-09-30)
 
 
