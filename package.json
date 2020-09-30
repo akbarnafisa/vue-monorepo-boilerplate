@@ -23,7 +23,7 @@
     "install:snippet": "yarn workspace wadiwaw-vscode-snippets build",
     "publish:snippet": "yarn workspace @wadiwaw/wadiwaw-snippet publish",
     "publish:core": "yarn workspace @wadiwaw/wadiwaw-core publish",
-    "push": "git add -A && git commit -m \"chore(lerna): publishing package \" && lerna version --conventional-commits",
+    "push": "git add -A && git commit -m \"chore(lerna): publishing package \" && lerna version --conventional-commits patch",
     "release": "lerna version patch"
 
   },
