@@ -1,0 +1,40 @@
+{
+  "name": "wadiwaw-vscode-snippets",
+  "displayName": "wadiwaw VSCode Snippets",
+  "description": "Snippets for wadiwaw Design Systems",
+  "icon": "images/vue-logo.png",
+  "repository": "https://bitbucket.org/dana-id/h5-design-system.git",
+  "version": "0.0.1",
+  "publisher": "wadiwaw",
+  "engines": {
+    "vscode": "^1.14.0"
+  },
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && vsce package -o ./dist/wadiwaw-vscode-snippets-$npm_package_version.vsix",
+    "install": "yarn build && code --install-extension ./dist/wadiwaw-vscode-snippets-$npm_package_version.vsix",
+    "uninstall": "code --uninstall-extension ./dist/wadiwaw-vscode-snippets-$npm_package_version.vsix"
+  },
+  "extensionDependencies": [
+    "octref.vetur"
+  ],
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "vue-html",
+        "path": "./snippets/vue-template.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "vsce": "^1.80.0"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}
