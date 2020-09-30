@@ -22,7 +22,7 @@
     "build:snippet": "yarn workspace wadiwaw-vscode-snippets build",
     "install:snippet": "yarn workspace wadiwaw-vscode-snippets build",
     "new-version": "lerna version patch --conventional-commits --no-git-tag-version",
-    "publish": "publish from-package"
+    "publish": "lerna publish from-package"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
