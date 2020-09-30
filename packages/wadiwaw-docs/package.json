@@ -1,6 +1,6 @@
 {
   "name": "@wadiwaw/wadiwaw-docs",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Wadiwaw documentation",
   "private": true,
   "scripts": {
@@ -12,9 +12,9 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
+    "@wadiwaw/wadiwaw-core": "^0.0.1",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.5",
-    "@wadiwaw/wadiwaw-core": "^0.0.1"
+    "nuxt": "^2.14.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
