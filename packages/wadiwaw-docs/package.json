@@ -1,6 +1,6 @@
 {
   "name": "@wadiwaw/wadiwaw-docs",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "description": "Wadiwaw documentation",
   "private": true,
   "scripts": {
