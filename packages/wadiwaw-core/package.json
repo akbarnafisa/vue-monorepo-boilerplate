@@ -1,6 +1,6 @@
 {
   "name": "@wadiwaw/wadiwaw-core",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Wadiwaw UI Component",
   "repository": "https://github.com/akbarnafisa/vue-monorepo-boilerplate.git",
   "scripts": {
