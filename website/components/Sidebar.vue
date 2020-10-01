@@ -7,7 +7,7 @@
     width="full"
     border-right="1px"
     border-color="gray.200"
-    h="calc(100vh - 60px)"
+    h="calc(100vh)"
     overflow-y="scroll"
   >
     <SideNavContent />

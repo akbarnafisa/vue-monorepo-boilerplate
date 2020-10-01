@@ -4,10 +4,48 @@
     p="3"
     :color="colorMode === 'light' ? 'gray.600': 'whiteAlpha.700'"
   >
-    <CHeading size="xs" color="gray.400" letter-spacing="wide" mb="2" text-transform="uppercase">
+    <CBox
+      as="nav"
+      h="60px"
+      d="flex"
+      pb="4"
+      align-items="center"
+    >
+      <CLink
+        as="nuxt-link"
+        w="130px"
+        to="/"
+        font-weight="bold"
+        font-size="1.2rem"
+      >
+        <Logo />
+      </CLink>
+      <CBadge
+        variant-color="vue"
+        variant="solid"
+        font-size="0.9em"
+        ml="2"
+        font-family="mono"
+        rounded="md"
+        text-transform="lowercase"
+      >
+        v0.6.6
+      </CBadge>
+
+    </CBox>
+    <CHeading
+      size="xs"
+      color="gray.400"
+      letter-spacing="wide"
+      mb="2"
+      text-transform="uppercase"
+    >
       Getting Started
     </CHeading>
-    <CBox v-for="(link, index) in topNavLinks" :key="`${index}-getting-started`">
+    <CBox
+      v-for="(link, index) in topNavLinks"
+      :key="`${index}-getting-started`"
+    >
       <CPseudoBox
         as="nuxt-link"
         :to="link.path"
@@ -32,76 +70,7 @@
         {{ link.name }}
       </CPseudoBox>
     </CBox>
-    <CHeading
-      size="xs"
-      color="gray.400"
-      letter-spacing="wide"
-      mt="4"
-      mb="2"
-      text-transform="uppercase"
-    >
-      About Chakra UI Vue
-    </CHeading>
-    <CBox v-for="(link, index) in aboutNavLinks" :key="`${index}-about-chakra`">
-      <CPseudoBox
-        as="nuxt-link"
-        :to="link.path"
-        p="0.2rem"
-        outline="none"
-        :_focus="{
-          shadow: 'outline',
-        }"
-        :_hover="{
-          textDecoration: 'none',
-          transform: 'translateX(3px)'
-        }"
-        d="block"
-        rounded="md"
-        :bg="$route.path === link.path ? 'vue.50' : 'transparent'"
-        :color="$route.path === link.path ? 'vue.700' : 'inherit'"
-        font-weight="bold"
-        font-size="sm"
-        text-decoration="none"
-        transition="background-color,transform 0.15s ease-in"
-      >
-        {{ link.name }}
-      </CPseudoBox>
-    </CBox>
-    <CHeading
-      size="xs"
-      color="gray.400"
-      letter-spacing="wide"
-      mt="4"
-      mb="2"
-      text-transform="uppercase"
-    >
-      Tooling
-    </CHeading>
-    <CPseudoBox
-      v-for="(link, index) in toolingLinks"
-      :key="`${index}-tooling`"
-      as="nuxt-link"
-      :to="link.path"
-      outline="none"
-      p="0.2rem"
-      :_focus="{
-        shadow: 'outline',
-      }"
-      :_hover="{
-        textDecoration: 'none',
-        transform: 'translateX(3px)'
-      }"
-      transition="background-color,transform 0.15s ease-in"
-      d="block"
-      rounded="md"
-      font-weight="bold"
-      font-size="sm"
-      text-decoration="none"
-      :bg="$route.path === link.path ? 'vue.50' : 'transparent'"
-      :color="$route.path === link.path ? 'vue.700' : 'inherit'"
-    >
-      {{ link.name }}
-    </CPseudoBox>
+
     <CHeading
       size="xs"
       color="gray.400"
@@ -143,7 +112,7 @@
 <script>
 import { CBox, CHeading, CPseudoBox } from '@chakra-ui/vue'
 import { stringToUrl } from '../utils'
-import { components as componentLinks, topNavLinks, aboutNavLinks, toolingLinks } from '../utils/all-routes'
+import { components as componentLinks, topNavLinks } from '../utils/all-routes'
 
 export default {
   name: 'SideNavContent',
@@ -173,15 +142,9 @@ export default {
           .filter(link => link !== 'Index')
       )
     },
-    aboutNavLinks () {
-      return this.parsedLinks(aboutNavLinks)
-    },
-    toolingLinks () {
-      return this.parsedLinks(toolingLinks)
-    },
     parsedLinks () {
       return value => Array.isArray(value)
-        ? value.map(link => ({ name: link, path: stringToUrl(link) }))
+        ? value.map(link => ({ name: link, path: link !== 'Getting Started' ? stringToUrl(link) : '/' }))
         : []
     }
   }

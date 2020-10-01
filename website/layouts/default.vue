@@ -1,7 +1,10 @@
 <template>
   <div class="container">
     <client-only>
-      <VueSkipTo to="#main-content" label="Skip to main content" />
+      <VueSkipTo
+        to="#main-content"
+        label="Skip to main content"
+      />
     </client-only>
     <MDXProvider :components="MDXComponents">
       <CThemeProvider>
@@ -12,8 +15,8 @@
             :color="colorMode === 'light' ? 'black' : 'whiteAlpha.900'"
           >
             <CReset />
-            <Navbar />
-            <CFlex max-h="calc(100vh - 60px)">
+            <!-- <Navbar /> -->
+            <CFlex max-h="calc(100vh)">
               <Sidebar />
               <CBox
                 id="main-content"
@@ -27,7 +30,7 @@
                 :class="styles(colorMode)"
                 as="section"
                 w="100%"
-                height="calc(100vh - 60px)"
+                height="calc(100vh)"
                 overflow-y="scroll"
                 :py="[5, 20]"
                 :px="[10, 10, 20, '14rem']"
@@ -36,8 +39,6 @@
                 <keep-alive>
                   <Nuxt id="page-content" />
                 </keep-alive>
-                <Footer v-if="$route.path === '/'" />
-                <FileContributors />
                 <BottomLink v-if="$route.path !== '/'" />
               </CBox>
             </CFlex>
@@ -60,10 +61,8 @@ import { css } from 'emotion'
 import { MDXProvider } from 'mdx-vue'
 
 import MDXComponents from '../components/MDXComponents'
-import Navbar from '../components/Navbar'
+// import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
-import Footer from '../components/Footer'
-import FileContributors from '../components/FileContributors'
 import BottomLink from '../components/BottomLink'
 
 // import { stringToUrl } from '../utils'
@@ -71,14 +70,12 @@ import BottomLink from '../components/BottomLink'
 export default {
   name: 'DefaultLayout',
   components: {
-    FileContributors,
     MDXProvider,
     CThemeProvider,
     CColorModeProvider,
     CBox,
-    Navbar,
+    // Navbar,
     Sidebar,
-    Footer,
     CReset,
     CFlex,
     BottomLink
@@ -112,64 +109,6 @@ export default {
         }
       },
       MDXComponents
-    }
-  },
-  metaInfo () {
-    return {
-      title: 'Chakra UI Vue',
-      meta: [
-        {
-          hid: 'description',
-          'data-n-head': '1',
-          name: 'description',
-        },
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          name: 'author',
-          content: 'Jonathan Bakebwa'
-        },
-        {
-          name: 'image',
-        },
-        {
-          name: 'image',
-          property: 'og:image',
-        },
-        {
-          name: 'description',
-        },
-        {
-          name: 'description',
-          property: 'og:description',
-        },
-        // OpenGraph tags
-        {
-          name: 'og:url',
-          content: this.$route.fullPath
-        },
-        {
-          name: 'og:type',
-          content: 'article'
-        },
-        {
-          name: 'og:description',
-        },
-        {
-          name: 'og:image',
-        },
-        {
-          name: 'twitter:title',
-          content: 'Chakra UI Vue | Documentation'
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary_large_image'
-        },
-        {
-          name: 'twitter:creator',
-          content: '@chakraui_vue'
-        }]
     }
   },
   computed: {

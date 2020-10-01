@@ -29,8 +29,6 @@ export default {
     'plugins/links.js',
     'plugins/editor.js',
     'plugins/chakra-ui.js',
-    // 'plugins/vue-meta.js',
-    'plugins/skip-to.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
