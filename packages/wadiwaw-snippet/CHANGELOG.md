@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.6](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/@wadiwaw/wadiwaw-snippet@0.6.5...@wadiwaw/wadiwaw-snippet@0.6.6) (2020-10-01)
+
+
+### Features
+
+* **snippet:** update 10 ([586ecca](https://github.com/akbarnafisa/vue-monorepo-boilerplate/commit/586eccae446125e3a844027b776c304e3f04b3e4))
+
+
+
+
+
 ## [0.6.5](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/@wadiwaw/wadiwaw-snippet@0.6.4...@wadiwaw/wadiwaw-snippet@0.6.5) (2020-10-01)
 
 
