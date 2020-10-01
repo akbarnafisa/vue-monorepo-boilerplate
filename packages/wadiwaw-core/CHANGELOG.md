@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.5](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/@wadiwaw/wadiwaw-core@0.6.4...@wadiwaw/wadiwaw-core@0.6.5) (2020-10-01)
+
+
+### Features
+
+* **FBtn:** update 0.10 ([029bba9](https://github.com/akbarnafisa/vue-monorepo-boilerplate/commit/029bba9ec24d751cbc8515824cb72366294a3d31))
+
+
+
+
+
 ## 0.6.4 (2020-10-01)
 
 
