@@ -1,7 +1,12 @@
+import dotenv from 'dotenv-defaults'
+import { createServerDirective } from '@chakra-ui/vue/src/directives'
+import { defaultTheme } from '@chakra-ui/vue'
+
 export default {
+  mode: 'universal',
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
-
+  srcDir: __dirname,
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'website',
@@ -12,12 +17,21 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  loading: { color: '#fff' },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: [
+    'css/page.css'
+  ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [
+    'plugins/links.js',
+    'plugins/editor.js',
+    'plugins/chakra-ui.js',
+    // 'plugins/vue-meta.js',
+    'plugins/skip-to.js'
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -25,16 +39,34 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
+    'modules/routes',
     '@nuxtjs/eslint-module',
   ],
-
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [],
-
+  modules: [
+    '@nuxtjs/emotion',
+    '@nuxtjs/pwa'
+  ],
+  router: {
+    prefetchLinks: true
+  },
+  extensions: [
+    'mdx'
+  ],
+  render: {
+    bundleRenderer: {
+      directives: {
+        chakra: createServerDirective(defaultTheme)
+      }
+    }
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [
       '@wadiwaw/wadiwaw-core',
+      'vue-lorem-ipsum',
+      '@chakra-ui/vue',
+      '@chakra-ui/theme-vue',
     ],
     additionalExtensions: [
       '.mdx'

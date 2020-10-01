@@ -1,55 +1,224 @@
 <template>
-  <div>
-    <Nuxt />
+  <div class="container">
+    <client-only>
+      <VueSkipTo to="#main-content" label="Skip to main content" />
+    </client-only>
+    <MDXProvider :components="MDXComponents">
+      <CThemeProvider>
+        <CColorModeProvider v-slot="{ colorMode }">
+          <CBox
+            font-family="body"
+            :bg="colorMode === 'light' ? 'white' : 'gray.800'"
+            :color="colorMode === 'light' ? 'black' : 'whiteAlpha.900'"
+          >
+            <CReset />
+            <Navbar />
+            <CFlex max-h="calc(100vh - 60px)">
+              <Sidebar />
+              <CBox
+                id="main-content"
+                ref="docContainer"
+                v-chakra="{
+                  ':focus': {
+                    outline: 'none',
+                    shadow: 'outline'
+                  }
+                }"
+                :class="styles(colorMode)"
+                as="section"
+                w="100%"
+                height="calc(100vh - 60px)"
+                overflow-y="scroll"
+                :py="[5, 20]"
+                :px="[10, 10, 20, '14rem']"
+                font-family="body"
+              >
+                <keep-alive>
+                  <Nuxt id="page-content" />
+                </keep-alive>
+                <Footer v-if="$route.path === '/'" />
+                <FileContributors />
+                <BottomLink v-if="$route.path !== '/'" />
+              </CBox>
+            </CFlex>
+          </CBox>
+        </CColorModeProvider>
+      </CThemeProvider>
+    </MDXProvider>
   </div>
 </template>
+<script>
+import {
+  CThemeProvider,
+  CColorModeProvider,
+  CReset,
+  CBox,
+  CFlex,
+  Css
+} from '@chakra-ui/vue'
+import { css } from 'emotion'
+import { MDXProvider } from 'mdx-vue'
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+import MDXComponents from '../components/MDXComponents'
+import Navbar from '../components/Navbar'
+import Sidebar from '../components/Sidebar'
+import Footer from '../components/Footer'
+import FileContributors from '../components/FileContributors'
+import BottomLink from '../components/BottomLink'
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
+// import { stringToUrl } from '../utils'
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+export default {
+  name: 'DefaultLayout',
+  components: {
+    FileContributors,
+    MDXProvider,
+    CThemeProvider,
+    CColorModeProvider,
+    CBox,
+    Navbar,
+    Sidebar,
+    Footer,
+    CReset,
+    CFlex,
+    BottomLink
+  },
+  data () {
+    return {
+      thBg: {
+        light: 'gray.50',
+        dark: 'whiteAlpha.100'
+      },
+      callout: {
+        light: {
+          bg: 'rgb(254, 235, 200)',
+          color: 'black',
+          borderLeft: '4px solid rgb(221, 107, 32)'
+        },
+        dark: {
+          bg: 'rgba(251, 211, 141, 0.16)',
+          color: 'inherit',
+          borderLeft: '4px solid rgb(251, 211, 141);'
+        }
+      },
+      code: {
+        light: {
+          bg: 'orange.100',
+          color: 'orange.800'
+        },
+        dark: {
+          bg: 'rgba(250, 240, 137, 0.16)',
+          color: 'rgb(250, 195, 137)'
+        }
+      },
+      MDXComponents
+    }
+  },
+  metaInfo () {
+    return {
+      title: 'Chakra UI Vue',
+      meta: [
+        {
+          hid: 'description',
+          'data-n-head': '1',
+          name: 'description',
+        },
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          name: 'author',
+          content: 'Jonathan Bakebwa'
+        },
+        {
+          name: 'image',
+        },
+        {
+          name: 'image',
+          property: 'og:image',
+        },
+        {
+          name: 'description',
+        },
+        {
+          name: 'description',
+          property: 'og:description',
+        },
+        // OpenGraph tags
+        {
+          name: 'og:url',
+          content: this.$route.fullPath
+        },
+        {
+          name: 'og:type',
+          content: 'article'
+        },
+        {
+          name: 'og:description',
+        },
+        {
+          name: 'og:image',
+        },
+        {
+          name: 'twitter:title',
+          content: 'Chakra UI Vue | Documentation'
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          name: 'twitter:creator',
+          content: '@chakraui_vue'
+        }]
+    }
+  },
+  computed: {
+    styles () {
+      return colorMode => css(Css({
+        th: {
+          bg: this.thBg[colorMode]
+        },
+        '.preview-panel': {
+          borderColor: this.thBg[colorMode]
+        },
+        'table, p': {
+          code: {
+            ...this.code[colorMode],
+            fontSize: 'sm'
+          }
+        },
+        blockquote: {
+          ...this.callout[colorMode],
+          code: {
+            ...this.code[colorMode],
+            fontSize: 'sm'
+          }
+        },
+        'h1, h2, h3': {
+          code: this.code[colorMode]
+        },
+        li: {
+          code: {
+            ...this.code[colorMode],
+            fontSize: 'sm'
+          }
+        }
+      })(this.$chakra.theme))
+    },
+    hash () {
+      return this.$route.name
+    }
+  },
+  watch: {
+    '$route.path' (newVal) {
+      this.$nextTick(() => {
+        this.$refs.docContainer.$el.scrollTo(0, 0)
+      })
+    }
+  }
 }
+</script>
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+<style lang="scss">
+@import '../css/components.scss';
 </style>
