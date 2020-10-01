@@ -21,7 +21,7 @@
     "build:core": "yarn workspace @wadiwaw/wadiwaw-core build",
     "build:snippet": "yarn workspace wadiwaw-vscode-snippets build",
     "install:snippet": "yarn workspace wadiwaw-vscode-snippets run install",
-    "new-version": "lerna version patch --conventional-commits --no-git-tag-version",
+    "new-version": "lerna version patch --conventional-commits",
     "publish": "lerna publish from-package"
   },
   "devDependencies": {
