@@ -1,6 +1,6 @@
 {
 	"fwadiwaw default": {
-		"prefix": "fmew07",
+		"prefix": "fmew08",
 		"body": [
 			"<f-btn type=\"${1:primary}\" size=\"${2:large}\">",
 			" ${3:Text}",
