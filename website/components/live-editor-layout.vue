@@ -16,9 +16,7 @@
       >
         Copy
       </CButton>
-      <div
-        class="editable-example-notice"
-      >
+      <div class="editable-example-notice">
         Editable Example
       </div>
       <slot name="editor" />

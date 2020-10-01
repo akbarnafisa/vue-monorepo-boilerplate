@@ -24,8 +24,14 @@
         gradientUnits="userSpaceOnUse"
         gradientTransform="matrix(180,-0.741309,0.741309,180,0.354053,90.2243)"
       >
-        <stop offset="0" style="stop-color:#41b883;stop-opacity:1" />
-        <stop offset="1" style="stop-color:#78ffbe;stop-opacity:1" />
+        <stop
+          offset="0"
+          style="stop-color:#41b883;stop-opacity:1"
+        />
+        <stop
+          offset="1"
+          style="stop-color:#78ffbe;stop-opacity:1"
+        />
       </linearGradient>
     </defs>
   </svg>

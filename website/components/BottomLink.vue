@@ -1,9 +1,22 @@
 <template>
   <div v-show="visible === true">
-    <CFlex justify="space-between" pb="20">
+    <CFlex
+      justify="space-between"
+      pb="20"
+    >
       <div>
-        <CLink v-if="prevName" as="router-link" class="link" :to="prevPath">
-          <c-button left-icon="chevron-left" border-color="green.500" variant-color="green" variant="outline">
+        <CLink
+          v-if="prevName"
+          as="router-link"
+          class="link"
+          :to="prevPath"
+        >
+          <c-button
+            left-icon="chevron-left"
+            border-color="green.500"
+            variant-color="green"
+            variant="outline"
+          >
             {{ prevName }}
           </c-button>
         </CLink>
@@ -11,8 +24,18 @@
       </div>
 
       <div>
-        <CLink v-if="nextName" as="router-link" class="link" :to="nextPath">
-          <c-button right-icon="chevron-right" border-color="green.500" variant-color="green" variant="outline">
+        <CLink
+          v-if="nextName"
+          as="router-link"
+          class="link"
+          :to="nextPath"
+        >
+          <c-button
+            right-icon="chevron-right"
+            border-color="green.500"
+            variant-color="green"
+            variant="outline"
+          >
             {{ nextName }}
           </c-button>
         </CLink>
@@ -66,13 +89,13 @@ export default {
 </script>
 
 <style lang="scss">
-  .link {
-    &:focus {
-      box-shadow: none;
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
+.link {
+  &:focus {
+    box-shadow: none;
   }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
 </style>

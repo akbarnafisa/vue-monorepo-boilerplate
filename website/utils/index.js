@@ -9,7 +9,6 @@ export const stringToUrl = (str, path = '/') => {
 
 
 export const findNextAndPrevRoute = (path) => {
-  console.log(path)
   const orderedRoutes = [...topNavLinks, ...components]
 
   let isValidRoutePath = false

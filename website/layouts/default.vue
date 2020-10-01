@@ -1,11 +1,5 @@
 <template>
   <div class="container">
-    <client-only>
-      <VueSkipTo
-        to="#main-content"
-        label="Skip to main content"
-      />
-    </client-only>
     <MDXProvider :components="MDXComponents">
       <CThemeProvider>
         <CColorModeProvider v-slot="{ colorMode }">
@@ -15,7 +9,6 @@
             :color="colorMode === 'light' ? 'black' : 'whiteAlpha.900'"
           >
             <CReset />
-            <!-- <Navbar /> -->
             <CFlex max-h="calc(100vh)">
               <Sidebar />
               <CBox
@@ -61,11 +54,9 @@ import { css } from 'emotion'
 import { MDXProvider } from 'mdx-vue'
 
 import MDXComponents from '../components/MDXComponents'
-// import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import BottomLink from '../components/BottomLink'
 
-// import { stringToUrl } from '../utils'
 
 export default {
   name: 'DefaultLayout',
@@ -74,7 +65,6 @@ export default {
     CThemeProvider,
     CColorModeProvider,
     CBox,
-    // Navbar,
     Sidebar,
     CReset,
     CFlex,
