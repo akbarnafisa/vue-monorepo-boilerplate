@@ -1,0 +1,48 @@
+
+@input-helper: {
+  @f-caption();
+  @caption-12();
+  display: flex;
+  justify-content: space-between;
+  margin-top: .02rem;
+
+  .f-input__helper-icon {
+    width: .16rem;
+    height: .16rem;
+  }
+}
+
+.f-input__clear-button, .f-input__dropdown {
+  position: absolute;
+  right: 0.04rem;
+  width: 0.24rem;
+  height: 0.24rem;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: .2rem;
+    height: .2rem;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.f-input__helper-default {
+  @input-helper();
+  color: @grey-70;
+}
+
+.f-input__helper-error {
+  @input-helper();
+  color: @red-50;
+}
+
+.f-input__wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.f-input__container {
+  position: relative;
+  width: 100%;
+}

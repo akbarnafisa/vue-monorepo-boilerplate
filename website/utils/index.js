@@ -14,14 +14,17 @@ export const findNextAndPrevRoute = (path) => {
   let isValidRoutePath = false
   const extractedRoutes = []
   orderedRoutes.forEach((singleRoute) => {
-    const urlString = stringToUrl(singleRoute)
+    let urlString = stringToUrl(singleRoute)
+
+    if (urlString === '/getting-started') {
+      urlString = '/'
+    }
     if (urlString === path) {
       isValidRoutePath = true
     }
     extractedRoutes.push({ name: singleRoute, path: urlString })
   })
 
-  console.log(isValidRoutePath)
   if (isValidRoutePath === false) {
     return { prev: '', next: '' }
   }

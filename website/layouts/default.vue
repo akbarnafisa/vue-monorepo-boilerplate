@@ -32,7 +32,7 @@
                 <keep-alive>
                   <Nuxt id="page-content" />
                 </keep-alive>
-                <BottomLink v-if="$route.path !== '/'" />
+                <BottomLink />
               </CBox>
             </CFlex>
           </CBox>

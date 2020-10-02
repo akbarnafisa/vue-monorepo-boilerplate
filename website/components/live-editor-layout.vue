@@ -36,13 +36,13 @@ export default {
 
 <style>
 .preview-code {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   border-radius: 5px;
   overflow: hidden;
   margin-top: 10px;
 
-  background: inherit;
+  background: inherit; */
 }
 
 .preview-panel {
@@ -71,13 +71,13 @@ export default {
   color: #efefef;
   text-transform: uppercase;
   font-size: 0.75rem;
-  top: 1.25rem;
+  top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: inline-block;
 }
 
 .prism-editor__code {
-  padding-top: 20px;
+  padding-top: 36px;
 }
 </style>

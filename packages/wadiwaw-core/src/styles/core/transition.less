@@ -1,0 +1,38 @@
+
+.f-fade-enter-active, .f-fade-leave-active-active {
+  transition: opacity .15s ease-in-out;
+  -webkit-transition: -webkit-opacity .15s ease-in-out;
+}
+
+.f-fade-enter,
+.f-fade-leave-active,
+.f-alert-leave-active,
+.f-alert-dialog-leave-active {
+  opacity: 0;
+  transition: opacity .15s ease-in-out;
+  -webkit-transition: -webkit-opacity .15s ease-in-out;
+
+}
+
+.f-alert-enter-active, .f-alert-dialog-enter-active {
+  -webkit-transition: -webkit-opacity .15s ease-in-out, -webkit-transform .15s ease-in-out;
+
+}
+
+.f-alert-leave-active, .f-alert-dialog-leave-active  {
+  -webkit-transition: -webkit-opacity .15s ease-in-out, -webkit-transform .15s ease-in-out;
+
+}
+
+.f-alert-enter {
+  opacity: 0;
+  transform: scale(0.92);
+  -webkit-transform: scale(0.92);
+
+}
+
+.f-alert-dialog-enter {
+  opacity: 0;
+  transform: scale(0.92) translate3d(-50%, -50%, 0) !important;
+  -webkit-transform: scale(0.92) translate3d(-50%, -50%, 0) !important;
+}

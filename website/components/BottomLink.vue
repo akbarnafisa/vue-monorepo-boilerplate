@@ -1,5 +1,5 @@
 <template>
-  <div v-show="visible === true">
+  <div v-show="visible">
     <CFlex
       justify="space-between"
       pb="20"
@@ -20,7 +20,6 @@
             {{ prevName }}
           </c-button>
         </CLink>
-        <div v-else />
       </div>
 
       <div>
@@ -39,8 +38,6 @@
             {{ nextName }}
           </c-button>
         </CLink>
-
-        <div v-else />
       </div>
     </CFlex>
   </div>
@@ -65,26 +62,24 @@ export default {
   }),
   watch: {
     '$route.path' (nextPath) {
-      const { prev, next } = findNextAndPrevRoute(nextPath)
-
+      this.checkRoute(nextPath)
+    }
+  },
+  created () {
+    this.checkRoute()
+  },
+  methods: {
+    checkRoute (path) {
+      const { prev, next } = findNextAndPrevRoute(path || this.$route.path)
+      if (!prev.path && !next.path) {
+        this.visible = false
+      }
       this.prevPath = prev.path
       this.prevName = prev.name
       this.nextPath = next.path
       this.nextName = next.name
     }
   },
-  created () {
-    const { prev, next } = findNextAndPrevRoute(this.$route.path)
-
-    if (!prev.path && !next.path) {
-      this.visible = false
-    }
-    this.prevPath = prev.path
-    this.prevName = prev.name
-    this.nextPath = next.path
-    this.nextName = next.name
-    console.log(this.prevName, this.nextName)
-  }
 }
 </script>
 

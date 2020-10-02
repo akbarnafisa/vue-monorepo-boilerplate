@@ -1,0 +1,104 @@
+// reset default font
+body {
+  font-family: @font-family-base !important;
+}
+
+.f-title {
+  font-family: @OpenSans;
+  @fw-600();
+  @normal();
+}
+
+.f-caption, .f-body {
+  font-family: @font-family-base;
+  @fw-normal();
+  @normal-body();
+}
+
+.f-caption, .f-body, .f-title {
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+
+  &.active {
+    @active()
+  }
+
+  &.inverted {
+    @inverted()
+  }
+
+  &.highlight {
+    @highlight()
+  }
+
+  &.error {
+    @error()
+  }
+
+  &.inactive {
+    @inactive()
+  }
+
+  &.secondary {
+    @secondary()
+  }
+}
+
+.title {
+  &-30 {
+    @title-30() ;
+  }
+  &-27 {
+    @title-27() ;
+  }
+  &-24 {
+    @title-24() ;
+  }
+  &-22 {
+    @title-22() ;
+  }
+  &-20 {
+    @title-20() ;
+  }
+  &-18 {
+    @title-18() ;
+  }
+  &-16 {
+    @title-16() ;
+  }
+  &-14 {
+    @title-14() ;
+  }
+  &-12 {
+    @title-12() ;
+  }
+}
+
+.body {
+  &-18 {
+    @body-18();
+  }
+
+  &-16 {
+    @body-16();
+  }
+
+  &-14 {
+    @body-14();
+  }
+}
+
+.caption {
+  &-12 {
+    @caption-12();
+  }
+
+  &-10 {
+    @caption-10();
+  }
+
+  &-8 {
+    @caption-8();
+  }
+}

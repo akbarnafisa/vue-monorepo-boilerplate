@@ -1,0 +1,137 @@
+.f-text-center {
+  text-align: center;
+}
+.f-text-left {
+  text-align: left;
+}
+.f-text-right {
+  text-align: right;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.no-scroll-100 {
+  overflow: hidden;
+}
+
+.f-flex {
+  display: flex;
+  &.f-flex-center {
+    justify-content: center;
+    align-items: center;
+  }
+  &.f-flex-row {
+    flex-direction: row;
+  }
+  &.f-flex-column {
+    flex-direction: column;
+  }
+  &.f-justify-start {
+    justify-content: flex-start;
+  }
+  &.f-justify-center {
+    justify-content: center;
+  }
+  &.f-justify-end {
+    justify-content: flex-end;
+  }
+  &.f-justify-space-between {
+    justify-content: space-between;
+  }
+  &.f-justify-space-around {
+    justify-content: space-around;
+  }
+
+  &.f-align-start {
+    align-items: flex-start;
+  }
+  &.f-align-center {
+    align-items: center;
+  }
+  &.f-align-end {
+    align-items: flex-end;
+  }
+
+  &.f-flex-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+@spaces: {
+  0: 0rem;
+  2: .02rem;
+  4: .04rem;
+  6: .06rem;
+  8: .08rem;
+  10: .1rem;
+  12: .12rem;
+  16: .16rem;
+  20: .2rem;
+  24: .24rem;
+  28: .28rem;
+  32: .32rem;
+}
+
+each(@spaces, {
+  .p-@{key} {
+    padding: @value;
+  }
+  .py-@{key} {
+    padding-top: @value;
+    padding-bottom: @value;
+  }
+  .px-@{key} {
+    padding-left: @value;
+    padding-right: @value;
+  }
+  .pt-@{key} {
+    padding-top: @value;
+  }
+  .pb-@{key} {
+    padding-bottom: @value;
+  }
+  .pr-@{key} {
+    padding-right: @value;
+  }
+  .pl-@{key} {
+    padding-left: @value;
+  }
+});
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+each(@spaces, {
+  .m-@{key} {
+    margin: @value;
+  }
+  .my-@{key} {
+    margin-top: @value;
+    margin-bottom: @value;
+  }
+  .mx-@{key} {
+    margin-left: @value;
+    margin-right: @value;
+  }
+  .mt-@{key} {
+    margin-top: @value;
+  }
+  .mb-@{key} {
+    margin-bottom: @value;
+  }
+  .mr-@{key} {
+    margin-right: @value;
+  }
+  .ml-@{key} {
+    margin-left: @value;
+  }
+});

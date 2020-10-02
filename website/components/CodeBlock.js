@@ -66,7 +66,7 @@ const CodeBlock = props => ({
           rounded: 'md',
           position: 'relative',
           fontSize: '0.9rem'
-        }
+        },
       }, [
         h(PrismEditor, {
           props: {
@@ -91,7 +91,7 @@ const CodeBlock = props => ({
           on: {
             click: this.copy
           }
-        }, this.copyButtonText)
+        }, [this.copyButtonText]),
       ])
     } else {
       const liveEditor = h(LiveEditor, {
@@ -99,7 +99,6 @@ const CodeBlock = props => ({
           code
         }
       })
-
       if (props.browser) {
         return h('client-only', [liveEditor])
       } else {
