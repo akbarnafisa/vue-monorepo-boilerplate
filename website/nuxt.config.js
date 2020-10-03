@@ -21,8 +21,13 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    'css/page.css'
+    'css/page.css',
+
   ],
+
+  styleResources: {
+    less: ['node_modules/@wadiwaw/wadiwaw-core/src/styles/core/variables.less'],
+  },
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
@@ -43,7 +48,8 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxtjs/emotion',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
   ],
   router: {
     prefetchLinks: true

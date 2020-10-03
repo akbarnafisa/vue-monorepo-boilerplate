@@ -47,10 +47,11 @@ const LiveEditor = {
       // Copy text to clipboard
       await copy(this.code)
       // Handle timeouts for copy button text
+
       if (this.copyTimeout) { clearTimeout(this.copyTimeout) }
-      this.copyButton.textContent = 'Copied!'
+      this.copyButton.children[0].src = require('@/assets/tick.svg')
       this.copyTimeout = setTimeout(() => {
-        this.copyButton.textContent = 'Copy'
+        this.copyButton.children[0].src = require('@/assets/copy.svg')
         clearTimeout(this.copyTimeout)
       }, 1000)
     }
@@ -62,7 +63,7 @@ const LiveEditor = {
   render (h) {
     const code = this.code
     return h('div', [
-      this.error && h('c-alert', {
+      this.error && h('div', {
         props: {
           status: 'error',
           variant: 'solid'

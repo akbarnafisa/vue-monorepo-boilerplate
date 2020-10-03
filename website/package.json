@@ -12,9 +12,6 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
-    "@wadiwaw/wadiwaw-core": "^0.6.5",
-    "core-js": "^3.6.5",
-    "nuxt": "^2.14.5",
     "@chakra-ui/theme-vue": "^0.2.7",
     "@chakra-ui/vue": "^0.6.5",
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
@@ -25,7 +22,9 @@
     "@nuxtjs/now-builder": "^0.17.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@vue-a11y/skip-to": "^2.0.1",
+    "@wadiwaw/wadiwaw-core": "^0.6.5",
     "copy-to-clipboard": "^3.3.1",
+    "core-js": "^3.6.5",
     "docsearch.js": "^2.6.3",
     "dotenv-defaults": "^1.1.1",
     "emotion": "^10.0.27",
@@ -35,6 +34,7 @@
     "mdx-vue-loader": "^1.0.2",
     "mixpanel-browser": "^2.36.0",
     "node-sass": "^4.13.1",
+    "nuxt": "^2.14.5",
     "prismjs": "^1.19.0",
     "sass-loader": "^8.0.2",
     "vue": "^2.6.11",
@@ -48,6 +48,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/style-resources": "^1.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",

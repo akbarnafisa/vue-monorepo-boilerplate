@@ -1,153 +1,147 @@
 <template>
-  <div class="container">
-    <MDXProvider :components="MDXComponents">
-      <CThemeProvider>
-        <CColorModeProvider v-slot="{ colorMode }">
-          <CBox
-            font-family="body"
-            :bg="colorMode === 'light' ? 'white' : 'gray.800'"
-            :color="colorMode === 'light' ? 'black' : 'whiteAlpha.900'"
-          >
-            <CReset />
-            <CFlex max-h="calc(100vh)">
-              <Sidebar />
-              <CBox
-                id="main-content"
-                ref="docContainer"
-                v-chakra="{
-                  ':focus': {
-                    outline: 'none',
-                    shadow: 'outline'
-                  }
-                }"
-                :class="styles(colorMode)"
-                as="section"
-                w="100%"
-                height="calc(100vh)"
-                overflow-y="scroll"
-                :py="[5, 20]"
-                :px="[10, 10, 20, '14rem']"
-                font-family="body"
-              >
-                <keep-alive>
-                  <Nuxt id="page-content" />
-                </keep-alive>
-                <BottomLink />
-              </CBox>
-            </CFlex>
-          </CBox>
-        </CColorModeProvider>
-      </CThemeProvider>
-    </MDXProvider>
+  <div class="f-flex">
+    <Sidebar />
+    <div class="content">
+      <div class="content__wrapper">
+        <MDXProvider :components="MDXComponents">
+          <Nuxt id="page-content" />
+        </MDXProvider>
+      </div>
+
+      <div class="content__toc">
+        <div class="f-title title-14 secondary mb-16">
+          CONTENTS
+        </div>
+        <a
+          v-for="(link, index) in toc"
+          :key="index"
+          :href="link.path"
+        >
+          <span class="dot" />
+          {{link.name}}
+        </a>
+      </div>
+    </div>
   </div>
 </template>
+
 <script>
-import {
-  CThemeProvider,
-  CColorModeProvider,
-  CReset,
-  CBox,
-  CFlex,
-  Css
-} from '@chakra-ui/vue'
-import { css } from 'emotion'
-import { MDXProvider } from 'mdx-vue'
-
-import MDXComponents from '../components/MDXComponents'
 import Sidebar from '../components/Sidebar'
-import BottomLink from '../components/BottomLink'
+import { MDXProvider } from 'mdx-vue'
+import MDXComponents from '../components/MDXComponents'
 
+import '@wadiwaw/wadiwaw-core/src/styles/index.less'
+import '../css/components.less'
 
 export default {
-  name: 'DefaultLayout',
   components: {
     MDXProvider,
-    CThemeProvider,
-    CColorModeProvider,
-    CBox,
     Sidebar,
-    CReset,
-    CFlex,
-    BottomLink
   },
   data () {
     return {
-      thBg: {
-        light: 'gray.50',
-        dark: 'whiteAlpha.100'
-      },
-      callout: {
-        light: {
-          bg: 'rgb(254, 235, 200)',
-          color: 'black',
-          borderLeft: '4px solid rgb(221, 107, 32)'
-        },
-        dark: {
-          bg: 'rgba(251, 211, 141, 0.16)',
-          color: 'inherit',
-          borderLeft: '4px solid rgb(251, 211, 141);'
-        }
-      },
-      code: {
-        light: {
-          bg: 'orange.100',
-          color: 'orange.800'
-        },
-        dark: {
-          bg: 'rgba(250, 240, 137, 0.16)',
-          color: 'rgb(250, 195, 137)'
-        }
-      },
-      MDXComponents
+      MDXComponents,
+      toc: []
     }
   },
-  computed: {
-    styles () {
-      return colorMode => css(Css({
-        th: {
-          bg: this.thBg[colorMode]
-        },
-        '.preview-panel': {
-          borderColor: this.thBg[colorMode]
-        },
-        'table, p': {
-          code: {
-            ...this.code[colorMode],
-            fontSize: 'sm'
-          }
-        },
-        blockquote: {
-          ...this.callout[colorMode],
-          code: {
-            ...this.code[colorMode],
-            fontSize: 'sm'
-          }
-        },
-        'h1, h2, h3': {
-          code: this.code[colorMode]
-        },
-        li: {
-          code: {
-            ...this.code[colorMode],
-            fontSize: 'sm'
-          }
-        }
-      })(this.$chakra.theme))
-    },
-    hash () {
-      return this.$route.name
-    }
-  },
-  watch: {
-    '$route.path' (newVal) {
-      this.$nextTick(() => {
-        this.$refs.docContainer.$el.scrollTo(0, 0)
+  mounted () {
+    const $els = document.querySelectorAll('h2[id], h3[id]')
+    const arr = []
+    $els.forEach($el => {
+      arr.push({
+        name: $el.textContent.replace('#', ''),
+        path: `#${$el.id}`
       })
-    }
+    })
+    this.toc = arr
+
+    console.log
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const $el = document.querySelector(`.content__toc a[href="#${id}"]`)
+
+        // }
+        if (entry.isIntersecting) {
+          console.log(this.tocEntryActive)
+          if (this.tocEntryActive) {
+            this.tocEntryActive.classList.remove('active');
+          }
+          this.tocEntryActive = $el
+          $el.classList.add('active');
+          return
+        }
+        $el.classList.remove('active');
+      });
+    }, {
+      root: null,
+      rootMargin: '0% 0% -50% 0%'
+    });
+
+    // Track all sections that have an `id` applied
+    $els.forEach((section) => {
+      observer.observe(section);
+    });
+
+
   }
+
+
 }
 </script>
 
-<style lang="scss">
-@import '../css/components.scss';
+
+<style lang="less" scoped>
+.content {
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(244, 245, 252);
+  border-radius: 0.48rem 0 0 0;
+  margin-left: 2.79rem;
+
+  &__wrapper {
+    padding: 0.36rem;
+    max-width: 8.5rem;
+  }
+
+  &__toc {
+    position: fixed;
+    width: 2rem;
+    position: fixed;
+    top: 20%;
+    left: calc(8.5rem + 2.79rem);
+    z-index: 3;
+
+    a {
+      font-size: 0.14rem;
+      display: block;
+      color: @grey-70;
+      padding: 0.08rem 0 0.08rem 0.16rem;
+      display: flex;
+      align-items: center;
+      transform: translateX(-0.12rem);
+      transition: all 0.15s ease;
+      .dot {
+        width: 0.06rem;
+        height: 0.06rem;
+        border-radius: 50%;
+        background-color: @blue-50;
+        display: inline-block;
+        margin-right: 0.12rem;
+        opacity: 0;
+      }
+      &.active {
+        color: @blue-50;
+        font-weight: 500;
+        transform: translateX(0);
+        .dot {
+          opacity: 1;
+        }
+      }
+      &:hover {
+        color: @blue-50;
+      }
+    }
+  }
+}
 </style>

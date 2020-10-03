@@ -38,7 +38,7 @@ const CodeBlock = props => ({
     return {
       text: undefined,
       copyTimeout: null,
-      copyButtonText: 'Copy'
+      copyButtonIcon: true
     }
   },
   methods: {
@@ -48,9 +48,9 @@ const CodeBlock = props => ({
 
       // Handle timeouts for copy button text
       if (this.copyTimeout) { clearTimeout(this.copyTimeout) }
-      this.copyButtonText = 'Copied!'
+      this.copyButtonIcon = false
       this.copyTimeout = setTimeout(() => {
-        this.copyButtonText = 'Copy'
+        this.copyButtonIcon = true
         clearTimeout(this.copyTimeout)
       }, 1000)
     }
@@ -59,11 +59,12 @@ const CodeBlock = props => ({
     const language = getLanguage(props.className)
     const code = this.$slots.default[0].text
     this.text = code
+    const icon = this.copyButtonIcon ? require('@/assets/copy.svg') : require('@/assets/tick.svg')
 
     if (!props.live) {
-      return h('CBox', {
-        attrs: {
-          rounded: 'md',
+      return h('div', {
+        style: {
+          borderRadius: '0.04rem',
           position: 'relative',
           fontSize: '0.9rem'
         },
@@ -76,24 +77,23 @@ const CodeBlock = props => ({
             ...this.$props
           }
         }),
-        h('CButton', {
-          props: {
-            variantColor: 'vue'
-          },
-          attrs: {
-            position: 'absolute',
-            size: 'sm',
-            top: '0.2rem',
-            right: '0.125rem',
-            textTransform: 'uppercase',
-            transform: 'scale(0.8)'
+        h('div', {
+          class: {
+            'copy-button': true
           },
           on: {
             click: this.copy
           }
-        }, [this.copyButtonText]),
+        }, [
+          h('img', {
+            attrs: {
+              src: icon
+            }
+          }),
+        ]),
       ])
-    } else {
+    }
+    else {
       const liveEditor = h(LiveEditor, {
         props: {
           code
