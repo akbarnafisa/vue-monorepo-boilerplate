@@ -10,3 +10,14 @@ a {
 .prism-editor__code {
   padding-top: 16px;
 }
+
+.page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease;
+  transition-duration: .125s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}

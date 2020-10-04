@@ -16,7 +16,7 @@ import { CButton } from "chakra-ui/vue"
 
 ### Usage
 ```vue live=true
-<c-button variant-color="green">Button</c-button>
+<!-- <c-button variant-color="green">Button</c-button> -->
 ```
 
 ### Button Sizes
@@ -24,7 +24,7 @@ import { CButton } from "chakra-ui/vue"
 Use the `size` prop to change the size of the `CButton`. You can set the value to `xs`, `sm`, `md` or `lg`.
 
 ```vue live=true
-<c-button-group :spacing="4">
+<!-- <c-button-group :spacing="4">
   <c-button variant-color="blue" size="xs">
     Button
   </c-button>
@@ -37,7 +37,7 @@ Use the `size` prop to change the size of the `CButton`. You can set the value t
   <c-button variant-color="blue" size="lg">
     Button
   </c-button>
-</c-button-group>
+</c-button-group> -->
 ```
 
 ### Button Variant
@@ -45,7 +45,7 @@ Use the `size` prop to change the size of the `CButton`. You can set the value t
 Use the `variant` prop to change the visual style of the `CButton`. You can set the value to `solid`, `ghost`, `outline`, or `link`.
 
 ```vue live=true
-<c-button-group :spacing="4">
+<!-- <c-button-group :spacing="4">
   <c-button variant-color="blue" variant="solid">
     Button
   </c-button>
@@ -58,7 +58,7 @@ Use the `variant` prop to change the visual style of the `CButton`. You can set 
   <c-button variant-color="blue" variant="link">
     Button
   </c-button>
-</c-button-group>
+</c-button-group> -->
 ```
 
 
@@ -67,14 +67,14 @@ Use the `variant` prop to change the visual style of the `CButton`. You can set 
 You can add left and right icons to the Button component. See how to [add icons](#/icon) to your project.
 
 ```vue live=true
-<c-button-group :spacing="4">
+<!-- <c-button-group :spacing="4">
   <c-button left-icon="email" variant-color="blue" variant="solid">
     Email
   </c-button>
   <c-button right-icon="arrow-forward" variant-color="blue" variant="outline">
     Call us
   </c-button>
-</c-button-group>
+</c-button-group> -->
 ```
 
 ### Button loading state
@@ -82,7 +82,7 @@ You can add left and right icons to the Button component. See how to [add icons]
 Pass `isLoading` prop to the Button component to show it's loading state. You can optionally pass `loadingText` prop, if you do, the button will show a spinner and the loading text. Otherwise, the button will take the width of the text label and show only the spinner.
 
 ```vue live=true
-<c-button-group :spacing="4">
+<!-- <c-button-group :spacing="4">
   <c-button isLoading variant-color="blue" variant="solid">
     Email
   </c-button>
@@ -94,7 +94,7 @@ Pass `isLoading` prop to the Button component to show it's loading state. You ca
   >
     Submit
   </c-button>
-</c-button-group>
+</c-button-group> -->
 ```
 
 ### Accessibility
@@ -110,9 +110,9 @@ Pass `isLoading` prop to the Button component to show it's loading state. You ca
 //  The size prop affects the height of the button
 //  but I can still override it by passing a custom height
 
-  <c-button size="md" height="50px" width="250px" border="2px" border-color="green.500">
+  <!-- <c-button size="md" height="50px" width="250px" border="2px" border-color="green.500">
     Button
-  </c-button>
+  </c-button> -->
 ```
 
 ### Custom Button
@@ -120,7 +120,7 @@ Pass `isLoading` prop to the Button component to show it's loading state. You ca
 In event you need to make your own custom button, you can leverage the `PseudoBox` component. It provides the `hover`, `focus`, `active` and `disabled` style props to style the button.
 
 ```vue live=true
-<c-pseudoBox
+<!-- <c-pseudoBox
   as="button"
   height="24px"
   line-height="1.2"
@@ -136,7 +136,7 @@ In event you need to make your own custom button, you can leverage the `PseudoBo
   :_active="{ bg: 'tomato' }"
 >
   Join Group
-</c-pseudoBox>
+</c-pseudoBox> -->
 ```
 
 ## Props

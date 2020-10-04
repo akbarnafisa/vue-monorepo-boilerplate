@@ -47,7 +47,6 @@ export default {
   ],
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxtjs/emotion',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
   ],
@@ -69,8 +68,6 @@ export default {
     transpile: [
       '@wadiwaw/wadiwaw-core',
       'vue-lorem-ipsum',
-      '@chakra-ui/vue',
-      '@chakra-ui/theme-vue',
     ],
     additionalExtensions: [
       '.mdx'
