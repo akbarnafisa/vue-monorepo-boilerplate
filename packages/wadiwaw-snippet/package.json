@@ -4,7 +4,7 @@
   "description": "Snippets for wadiwaw Design Systems",
   "icon": "images/vue-logo.png",
   "repository": "https://bitbucket.org/dana-id/h5-design-system.git",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "wadiwaw",
   "engines": {
     "vscode": "^1.14.0"
