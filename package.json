@@ -2,8 +2,8 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*",
-      "website"
+      "packages/wadiwaw-core",
+      "packages/wadiwaw-snippet"
     ]
   },
   "repository": {
