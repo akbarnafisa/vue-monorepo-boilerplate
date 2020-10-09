@@ -34,6 +34,7 @@ export default {
     'plugins/links.js',
     'plugins/editor.js',
     'plugins/chakra-ui.js',
+    'node_modules/@wadiwaw/wadiwaw-core/dist/esm/globalComponents.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
