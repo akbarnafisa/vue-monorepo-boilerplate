@@ -5,7 +5,8 @@
   "repository": "https://github.com/akbarnafisa/vue-monorepo-boilerplate.git",
   "scripts": {
     "serve": "vue-cli-service serve --port 8181",
-    "build": "rm -rf dist &&  rollup -c"
+    "build": "rm -rf dist &&  rollup -c",
+    "prepublish": "yarn build"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index-es.js",
