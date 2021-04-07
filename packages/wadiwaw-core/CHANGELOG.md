@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.9](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/@wadiwaw/wadiwaw-core@0.6.8...@wadiwaw/wadiwaw-core@0.6.9) (2021-04-07)
+
+
+### Bug Fixes
+
+* **FBtn:** fix ([34f2161](https://github.com/akbarnafisa/vue-monorepo-boilerplate/commit/34f2161fdf023dd4418adfa14c41e83a566c13c0))
+
+
+
+
+
 ## [0.6.8](https://github.com/akbarnafisa/vue-monorepo-boilerplate/compare/@wadiwaw/wadiwaw-core@0.6.7...@wadiwaw/wadiwaw-core@0.6.8) (2021-04-07)
 
 
